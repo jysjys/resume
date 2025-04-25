@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 个人简历项目
 
-## Getting Started
+这是一个基于 Next.js 开发的个人简历项目，使用现代化的技术栈构建，支持主题切换，提供美观的界面展示个人信息、教育经历、工作经验等内容。
 
-First, run the development server:
+## 技术栈
 
+- **Next.js v15.3.1**: 使用最新的 App Router 和 Server Components
+- **React v19.0.0**: 采用最新的 React 特性
+- **TailwindCSS v4.1.4**: 原子化 CSS 框架，提供灵活的样式定制
+- **DaisyUI v5.0.28**: 基于 TailwindCSS 的组件库，提供丰富的预设主题
+
+## 特性
+
+- 🎨 支持多种主题切换（light、dark、cupcake、synthwave、retro等）
+- 📱 响应式设计，完美适配各种设备
+- ⚡️ 使用 Turbopack 提供极速开发体验
+- 🔍 TypeScript 支持，提供类型安全
+
+## 快速开始
+
+1. 安装依赖：
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 启动开发服务器：
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. 在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看效果
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 构建部署
 
-## Learn More
+1. 构建生产版本：
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. 启动生产服务器：
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 贡献
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+欢迎提交 Issue 或 Pull Request 来帮助改进这个项目！
