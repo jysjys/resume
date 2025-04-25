@@ -1,103 +1,303 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { useState, useEffect } from 'react'
+import avatar from '../../public/avatar.jpeg'
+interface ResumeData {
+  basicInfo: {
+    name: string
+    gender: string
+    age: number
+    phone: string
+    email: string
+    major: string
+    position: string
+    photoUrl?: string
+  }
+  education: Array<{
+    school: string
+    major: string
+    startDate: string
+    endDate: string
+  }>
+  experience: Array<{
+    company: string
+    position: string
+    startDate: string
+    endDate: string
+    description: string
+  }>
+  skills: Array<{
+    category: string
+    items: string[]
+  }>
+  projects: Array<{
+    name: string
+    description: string
+    technologies: string[]
+  }>
+}
+
+export default function ResumePage() {
+  const [theme, setTheme] = useState('cupcake')
+  const [resumeData, setResumeData] = useState<ResumeData>({
+    basicInfo: {
+      name: '',
+      gender: '',
+      age: 0,
+      phone: '',
+      email: '',
+      major: '',
+      position: '',
+      photoUrl: avatar.src
+    },
+    education: [],
+    experience: [],
+    skills: [
+      {
+        category: '前端技术',
+        items: ['Vue', 'React', 'Next.js', 'Express']
+      },
+      {
+        category: '后端技术',
+        items: ['Spring Boot', 'MySQL']
+      }
+    ],
+    projects: []
+  })
+
+  // 主题切换函数
+  const handleThemeChange = (newTheme: string) => {
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme)
+  }
+
+  // 初始化主题
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'cupcake'
+    setTheme(savedTheme)
+    document.documentElement.setAttribute('data-theme', savedTheme)
+  }, [])
+
+  // 保存主题到本地存储
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="container mx-auto px-4 py-12 max-w-5xl">
+      {/* 主题切换器 */}
+      <div className="flex justify-end mb-4">
+        <div className="dropdown dropdown-end">
+          <div tabIndex={0} role="button" className="btn btn-ghost m-1 gap-1 normal-case">
+            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+            <span className="hidden md:inline">主题</span>
+            <svg width="12px" height="12px" className="ml-1 hidden h-3 w-3 fill-current opacity-60 sm:inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048"><path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path></svg>
+          </div>
+          <div tabIndex={0} className="dropdown-content z-[1] w-52 rounded-box bg-base-300 p-2 shadow-2xl">
+            <div className="grid grid-cols-1 gap-3">
+              <div className="outline-base-content overflow-hidden rounded-lg outline outline-2 outline-offset-2" data-set-theme="light" data-act-class="outline" onClick={() => handleThemeChange('light')}>
+                <div data-theme="light" className="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+                  <div className="grid grid-cols-5 grid-rows-3">
+                    <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                      <div className="flex-grow text-sm font-bold">light</div>
+                      <div className="flex flex-shrink-0 flex-wrap gap-1">
+                        <div className="bg-primary w-2 rounded"></div>
+                        <div className="bg-secondary w-2 rounded"></div>
+                        <div className="bg-accent w-2 rounded"></div>
+                        <div className="bg-neutral w-2 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="outline-base-content overflow-hidden rounded-lg outline outline-2 outline-offset-2" data-set-theme="dark" data-act-class="outline" onClick={() => handleThemeChange('dark')}>
+                <div data-theme="dark" className="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+                  <div className="grid grid-cols-5 grid-rows-3">
+                    <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                      <div className="flex-grow text-sm font-bold">dark</div>
+                      <div className="flex flex-shrink-0 flex-wrap gap-1">
+                        <div className="bg-primary w-2 rounded"></div>
+                        <div className="bg-secondary w-2 rounded"></div>
+                        <div className="bg-accent w-2 rounded"></div>
+                        <div className="bg-neutral w-2 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="outline-base-content overflow-hidden rounded-lg outline outline-2 outline-offset-2" data-set-theme="cupcake" data-act-class="outline" onClick={() => handleThemeChange('cupcake')}>
+                <div data-theme="cupcake" className="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+                  <div className="grid grid-cols-5 grid-rows-3">
+                    <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                      <div className="flex-grow text-sm font-bold">cupcake</div>
+                      <div className="flex flex-shrink-0 flex-wrap gap-1">
+                        <div className="bg-primary w-2 rounded"></div>
+                        <div className="bg-secondary w-2 rounded"></div>
+                        <div className="bg-accent w-2 rounded"></div>
+                        <div className="bg-neutral w-2 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="outline-base-content overflow-hidden rounded-lg outline outline-2 outline-offset-2" data-set-theme="synthwave" data-act-class="outline" onClick={() => handleThemeChange('synthwave')}>
+                <div data-theme="synthwave" className="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+                  <div className="grid grid-cols-5 grid-rows-3">
+                    <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                      <div className="flex-grow text-sm font-bold">synthwave</div>
+                      <div className="flex flex-shrink-0 flex-wrap gap-1">
+                        <div className="bg-primary w-2 rounded"></div>
+                        <div className="bg-secondary w-2 rounded"></div>
+                        <div className="bg-accent w-2 rounded"></div>
+                        <div className="bg-neutral w-2 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="outline-base-content overflow-hidden rounded-lg outline outline-2 outline-offset-2" data-set-theme="retro" data-act-class="outline" onClick={() => handleThemeChange('retro')}>
+                <div data-theme="retro" className="bg-base-100 text-base-content w-full cursor-pointer font-sans">
+                  <div className="grid grid-cols-5 grid-rows-3">
+                    <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                      <div className="flex-grow text-sm font-bold">retro</div>
+                      <div className="flex flex-shrink-0 flex-wrap gap-1">
+                        <div className="bg-primary w-2 rounded"></div>
+                        <div className="bg-secondary w-2 rounded"></div>
+                        <div className="bg-accent w-2 rounded"></div>
+                        <div className="bg-neutral w-2 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      {/* 基本信息部分 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">基本信息</h2>
+        <div className="flex gap-8 flex-col md:flex-row">
+          {/* 照片上传区域 */}
+          <div className="w-48 h-48 bg-base-100 rounded-xl flex items-center justify-center border-2 border-dashed border-base-300 hover:border-primary transition-all duration-300 cursor-pointer group">
+            {resumeData.basicInfo.photoUrl ? (
+              <img
+                src={resumeData.basicInfo.photoUrl}
+                alt="个人照片"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            ) : (
+              <div className="text-center text-base-content/50 group-hover:text-primary transition-colors duration-300">
+                <p>点击上传照片</p>
+                <p className="text-sm mt-2">(建议尺寸: 200x200)</p>
+              </div>
+            )}
+          </div>
+          
+          {/* 基本信息表单 */}
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">姓名</label>
+              <div className="mt-1 text-base-content font-medium">姜玉双</div>
+            </div>
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">性别</label>
+              <div className="mt-1 text-base-content font-medium">男</div>
+            </div>
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">年龄</label>
+              <div className="mt-1 text-base-content font-medium">32</div>
+            </div>
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">手机</label>
+              <div className="mt-1 text-base-content font-medium">16619917440</div>
+            </div>
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">邮箱</label>
+              <div className="mt-1 text-base-content font-medium">double.jys@gmail.com</div>
+            </div>
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">专业</label>
+              <div className="mt-1 text-base-content font-medium">计算机科学与技术</div>
+            </div>
+            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">期望岗位</label>
+              <div className="mt-1 text-base-content font-medium">全栈偏前端</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 教育经历部分 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">教育经历</h2>
+        <div className="p-4 rounded-lg bg-base-100 hover:bg-primary/5 transition-all duration-300">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+            <div className="flex-1">
+              <h3 className="text-lg font-medium text-base-content">绥化学院</h3>
+              <p className="text-base-content/70">计算机科学与技术</p>
+            </div>
+            <div className="text-sm text-base-content/60 md:text-right">
+              2013 - 2017
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 工作经验部分 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">工作经历</h2>
+        <div className="space-y-4">
+          <div className="p-4 rounded-xl bg-base-100 hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md ">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+              <div className="flex-1">
+                <h3 className="text-lg font-medium text-base-content">北银金科</h3>
+                <p className="text-base-content/70">全栈开发工程师</p>
+              </div>
+              <div className="text-sm text-base-content/60 md:text-right">
+                2023 - 至今
+              </div>
+            </div>
+          </div>
+          <div className="p-4 rounded-xl bg-base-100 hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md ">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+              <div className="flex-1">
+                <h3 className="text-lg font-medium text-base-content">恒生电子</h3>
+                <p className="text-base-content/70">前端开发工程师</p>
+              </div>
+              <div className="text-sm text-base-content/60 md:text-right">
+                2018 - 2023
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 专业技能部分 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">专业技能</h2>
+        {resumeData.skills.map((skillGroup, index) => (
+          <div key={index} className="mb-6">
+            <h3 className="text-xl font-medium mb-4 text-primary">{skillGroup.category}</h3>
+            <div className="flex flex-wrap gap-3">
+              {skillGroup.items.map((skill, skillIndex) => (
+                <span 
+                  key={skillIndex} 
+                  className="px-4 py-2 border border-base-300 bg-base-100 hover:bg-primary/10 rounded-xl text-sm font-medium text-primary hover:text-primary-focus cursor-default transition-all duration-300 hover:scale-105 hover:shadow-md"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* 项目经历部分 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">项目经历</h2>
+        <p className="text-base-content/50 italic">待补充</p>
+      </section>
     </div>
-  );
+  )
 }
