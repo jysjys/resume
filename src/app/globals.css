@@ -2,3 +2,19 @@
 @plugin "daisyui" {
   themes: all;
 }
+
+.mermaid-chart {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.mermaid-chart svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 确保图表在暗色主题下也能正常显示 */
+[data-theme="dark"] .mermaid-chart svg {
+  filter: invert(1) hue-rotate(180deg);
+}
