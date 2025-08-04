@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import avatar from '../../public/avatar.jpeg'
-import MermaidChart from '@/components/MermaidChart'
 
 interface ResumeData {
   basicInfo: {
@@ -211,19 +210,15 @@ export default function ResumePage() {
             </div>
             <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
               <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">年龄</label>
-              <div className="mt-1 text-base-content font-medium">32</div>
+              <div className="mt-1 text-base-content font-medium">31</div>
             </div>
             <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
-              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">手机</label>
+              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">手机/微信</label>
               <div className="mt-1 text-base-content font-medium">16619917440</div>
             </div>
             <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
               <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">邮箱</label>
               <div className="mt-1 text-base-content font-medium">double.jys@gmail.com</div>
-            </div>
-            <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
-              <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">专业</label>
-              <div className="mt-1 text-base-content font-medium">计算机科学与技术</div>
             </div>
             <div className="group p-3 rounded-lg bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-all duration-300">
               <label className="block text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors duration-300">期望岗位</label>
@@ -257,7 +252,7 @@ export default function ResumePage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
               <div className="flex-1">
                 <h3 className="text-lg font-medium text-base-content">北银金科</h3>
-                <p className="text-base-content/70">全栈开发工程师</p>
+                <p className="text-base-content/70">前端开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
                 2023 - 至今
@@ -271,75 +266,21 @@ export default function ResumePage() {
                 <p className="text-base-content/70">前端开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
-                2018 - 2023
+                2021 - 2023
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 专业技能部分 */}
-      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
-        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">专业技能</h2>
-        <div className="bg-base-100 p-6 rounded-xl">
-          <MermaidChart
-            chart={`
-              graph LR
-              ROOT[💻 技术栈]
-
-              ROOT --> FRONT
-              ROOT --> BACK
-              ROOT --> BUILD
-              ROOT --> DATA
-              ROOT --> TOOLS
-              ROOT --> FUTURE
-
-              subgraph FRONT[🧠 前端开发]
-              A1[Vue.js]
-              A2[React]
-              A3[Next.js]
-              A4[ECharts]
-              A5[Tailwind CSS]
-              A6[DaisyUI]
-              A7[Three.js]
-              end
-
-              subgraph BACK[🚀 后端服务]
-              B1[Express.js]
-              B2[Spring Boot]
-              B3[Node.js]
-              end
-
-              subgraph BUILD[⚙️ 构建部署]
-              C1[Vercel]
-              C2[Webpack]
-              C3[Vite]
-              C4[Git & GitHub]
-              end
-
-              subgraph DATA[🧱 数据库与存储]
-              D1[MySQL]
-              D2[Redis]
-              D3[Prisma ORM]
-              D4[Supabase]
-              end
-
-              subgraph TOOLS[🔧 开发工具]
-              E1[TypeScript]
-              E2[ESLint & Prettier]
-              E3[Postman]
-              E4[VS Code / IntelliJ]
-              end
-
-              subgraph FUTURE[📚 学习方向]
-              F1[微前端]
-              F2[CI/CD]
-              F3[Serverless]
-              end
-
-              style ROOT fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
-            `}
-          />
+          <div className="p-4 rounded-xl bg-base-100 hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md ">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+              <div className="flex-1">
+                <h3 className="text-lg font-medium text-base-content">精友科技有限公司</h3>
+                <p className="text-base-content/70">前端开发工程师</p>
+              </div>
+              <div className="text-sm text-base-content/60 md:text-right">
+                2018 - 2021
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -352,30 +293,31 @@ export default function ResumePage() {
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary">对公客户关系CRM系统</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Qiankun', 'ElementUI', 'ECharts', 'Nginx', 'Nacos'].map((tech, index) => (
+                {['Qiankun', 'SpringBoot', 'ECharts', 'Nginx'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
               <div className="space-y-4">
-                <div className="collapse collapse-plus bg-base-200">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
                   <input type="checkbox" className="peer" /> 
                   <div className="collapse-title text-base font-medium peer-checked:text-primary">
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>采用微前端架构（基座+子应用），实现业务模块解耦与独立部署，基座应用集成统一登录鉴权、动态菜单管理、全局状态共享及ECharts数据可视化看板</p>
+                    <p>采用微前端架构，实现业务模块解耦与独立部署，基座应用集成统一登录鉴权、菜单管理、全局状态共享及ECharts数据可视化看板</p>
                   </div>
                 </div>
-                <div className="collapse collapse-plus bg-base-200">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title text-base font-medium peer-checked:text-primary">
-                    核心实现
+                    技术亮点
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>基座与子应用间通过initGlobalState通信，封装props下发机制，实现跨应用客户数据同步</li>
-                      <li>子应用1（客户管理）：实现客户360°视图、智能分配（基于权重算法）、移交审批流</li>
-                      <li>子应用2（数据分析）：集成DataEase开源BI，开发蒙特卡洛算法归因模块，支持多维度数据穿透分析</li>
+                      <li>基于 Qiankun 搭建主子应用架构，实现独立开发、部署与运行时隔离</li>
+                      <li>集成 MinIO 作为文档存储中台，实现文件分类管理与权限控制（读写/下载）</li>
+                      <li>分析构建产物，通过 SplitChunksPlugin 拆分公共依赖（如Vue/Lodash）</li>
+                      <li>对接 kkFileView 服务，支持Office/PDF/图片等50+格式的在线预览</li>
                     </ul>
                   </div>
                 </div>
@@ -388,21 +330,21 @@ export default function ResumePage() {
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary">SaaS党建平台</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Umi', 'Ant Design Pro', 'React Hooks', 'JSON Schema'].map((tech, index) => (
+                {['Umi', 'Ant Design', 'React Hooks', 'JSON Schema'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
               <div className="space-y-4">
-                <div className="collapse collapse-plus bg-base-200">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title text-base font-medium peer-checked:text-primary">
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>为30+地方政府提供党员管理、组织生活、党费收缴等全流程数字化解决方案</p>
+                    <p>为30+地方政府提供党员管理、组织生活等全流程数字化解决方案</p>
                   </div>
                 </div>
-                <div className="collapse collapse-plus bg-base-200">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title text-base font-medium peer-checked:text-primary">
                     技术亮点
@@ -410,40 +352,84 @@ export default function ResumePage() {
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
                       <li>动态表单引擎：通过JSON Schema配置渲染表单，支持50+字段类型，减少前端硬编码70%</li>
-                      <li>文件上传组件支持断点续传，基于OSS直传，大文件上传成功率99.5%</li>
                       <li>权限组件实现RBAC模型，按钮级控制精度</li>
                       <li>采用React Hooks优化代码复用率，抽离useAuth、useTable等公共Hook</li>
                     </ul>
-                    <div className="mt-4 text-success font-medium">
-                      成果：项目交付周期缩短25%，获202X年省级数字政务创新案例奖
-                    </div>
+                    {/* <div className="mt-4 text-success font-medium">
+                      成果：项目交付周期缩短25%，获2022年省级数字政务创新案例奖
+                    </div> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* 项目3：个人简历系统 */}
+          {/* 项目3：AI 内容协作平台 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">个人简历系统</h3>
+              <h3 className="card-title text-xl font-bold text-primary">AI 内容协作平台</h3>
               <div className="flex flex-wrap gap-2 my-2">
                 {['Next.js', 'TypeScript', 'TailwindCSS', 'DaisyUI', 'Next-Auth', 'Supabase'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
               <div className="space-y-4">
-                <div className="collapse collapse-plus bg-base-200">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    项目描述
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <p>基于 AI 的实时内容创作与管理平台，支持多用户协作与智能推荐</p>
+                  </div>
+                </div>
+                <div className="collapse collapse-open collapse-plus bg-base-200">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title text-base font-medium peer-checked:text-primary">
                     项目亮点
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>实现SSR/ISR渲染优化，首屏加载&lt;800ms</li>
-                      <li>鉴权方案：Next-Auth支持GitHub/OAuth2.0登录，结合JWT校验</li>
-                      <li>数据层：Supabase集成文件存储（图片CDN加速）+ 远程MySQL云数据库（读写分离架构）</li>
-                      <li>UI组件：基于DaisyUI封装Markdown渲染器，支持暗黑模式切换</li>
+                      <li>采用 LangChain.js 构建对话链，优化复杂 AI 任务（如多步骤内容生成）的交互流程</li>
+                      <li>基于 ECharts D3.js实现交互式财务图表，支持流式数据增量更新，实时反映财务趋势变化</li>
+                      <li>结合SupabaseAuth实现基于角色的财务报表访问控制（RBAC），确保敏感财务数据仅对授权用户可见</li>
+                      <li>采用 Server-Sent Events (SSE) 实现实时财务数据流式推送，确保大规模报表（10万+行）无卡顿加载</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="card-body">
+              <h3 className="card-title text-xl font-bold text-primary">精友系统</h3>
+              <div className="flex flex-wrap gap-2 my-2">
+                {['Next.js', 'TypeScript', 'TailwindCSS', 'DaisyUI', 'Next-Auth', 'Supabase'].map((tech, index) => (
+                  <span key={index} className="badge badge-primary badge-outline">{tech}</span>
+                ))}
+              </div>
+              <div className="space-y-4">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    项目描述
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <p>基于Vue的高性能数据管理平台，支持海量数据展示与精细化权限控制</p>
+                  </div>
+                </div>
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    项目亮点
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>封装统一埋点SDK，自动采集页面PV、按钮点击、接口异常等数据，使用requestIdleCallback异步上报埋点数据，避免影响主线程性能</li>
+                      <li>基于xlsx库实现前端Excel解析，支持数据校验与错误提示</li>
+                      <li>基于 Promise 封装 的通用弹窗组件，支持 链式调用，简化交互逻辑</li>
+                      <li>采用 Pinia 替代 Vuex，实现模块化状态管理，配合 Composition API 提升代码可维护性</li>
                     </ul>
                   </div>
                 </div>
