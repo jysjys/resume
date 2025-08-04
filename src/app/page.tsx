@@ -180,8 +180,8 @@ export default function ResumePage() {
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">基本信息</h2>
         <div className="flex gap-8 flex-col md:flex-row">
-          {/* 照片上传区域 */}
-          <div className="w-48 h-48 bg-base-100 rounded-xl flex items-center justify-center border-2 border-dashed border-base-300 hover:border-primary transition-all duration-300 cursor-pointer group">
+          {/* 照片上传区域 - 添加 print-avatar 类 */}
+          <div className="w-48 h-48 bg-base-100 rounded-xl flex items-center justify-center border-2 border-dashed border-base-300 hover:border-primary transition-all duration-300 cursor-pointer group print-avatar">
             {resumeData.basicInfo.photoUrl ? (
               <Image
                 width={200}
@@ -284,8 +284,8 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* 项目经历部分 */}
-      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+      {/* 项目经历部分 - 添加 print-projects 类 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300 print-projects">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">项目经历</h2>
         <div className="space-y-6">
           {/* 项目1：CRM系统 */}
