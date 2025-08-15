@@ -364,12 +364,12 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* 项目3：AI 内容协作平台 */}
+          {/* 项目3：AI 智能财报助手 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">AI 内容协作平台</h3>
+              <h3 className="card-title text-xl font-bold text-primary">AI 智能财报助手</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Next.js', 'TypeScript', 'TailwindCSS', 'DaisyUI', 'Next-Auth', 'Supabase'].map((tech, index) => (
+                {['Next.js', 'TailwindCSS', 'DaisyUI', 'Supabase'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
@@ -392,7 +392,7 @@ export default function ResumePage() {
                     <ul className="list-disc list-inside space-y-2">
                       <li>采用 LangChain.js 构建对话链，优化复杂 AI 任务（如多步骤内容生成）的交互流程</li>
                       <li>基于 ECharts D3.js实现交互式财务图表，支持流式数据增量更新，实时反映财务趋势变化</li>
-                      <li>结合SupabaseAuth实现基于角色的财务报表访问控制（RBAC），确保敏感财务数据仅对授权用户可见</li>
+                      <li>结合SupabaseAuth实现基于角色的财务报表访问控制，确保敏感财务数据仅对授权用户可见</li>
                       <li>采用 Server-Sent Events (SSE) 实现实时财务数据流式推送，确保大规模报表（10万+行）无卡顿加载</li>
                     </ul>
                   </div>
@@ -401,11 +401,12 @@ export default function ResumePage() {
             </div>
           </div>
 
+          {/* 项目4：精友系统 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary">精友系统</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Next.js', 'TypeScript', 'TailwindCSS', 'DaisyUI', 'Next-Auth', 'Supabase'].map((tech, index) => (
+                {['Vue', 'H5'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>

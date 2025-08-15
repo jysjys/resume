@@ -41,17 +41,17 @@
   
   /* 头像容器尺寸调整 */
   .w-48.h-48 {
-    width: 120px !important;
-    height: 120px !important;
-    min-width: 120px !important;
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px !important;
     margin-right: 16px;
   }
   
   /* 打印时头像样式 */
   .print-avatar {
-    width: 120px !important;
-    height: 120px !important;
-    min-width: 120px !important;
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px !important;
   }
   
   /* 项目部分打印样式 */
@@ -63,8 +63,8 @@
   
   /* 减小各部分间距，使内容更紧凑 */
   section {
-    margin-bottom: 16px !important;
-    padding: 16px !important;
+    margin-bottom: 10px !important;
+    padding: 12px !important;
   }
   
   /* 减小项目卡片间距 */
@@ -92,28 +92,77 @@
   
   /* 调整页面边距 */
   @page {
-    margin: 1cm;
+    margin: 0.5cm;
   }
   
   /* 容器宽度调整 */
   .container {
     max-width: 100% !important;
     padding: 0 !important;
+    margin-top: 0 !important;
   }
   
   /* 减小标题和内容的间距 */
-  h2, h3 {
-    margin-bottom: 8px !important;
+  h2 {
+    margin-bottom: 6px !important;
+    font-size: 1.25rem !important;
+  }
+  
+  h3 {
+    margin-bottom: 4px !important;
+    font-size: 1rem !important;
   }
   
   /* 调整折叠面板的内边距 */
   .collapse-title, .collapse-content {
-    padding: 8px 12px !important;
+    padding: 6px 10px !important;
   }
   
   /* 减小技术标签的大小 */
   .badge {
     padding: 2px 6px !important;
     font-size: 0.7rem !important;
+  }
+  
+  /* 调整基本信息部分的布局 */
+  .flex-1.grid.grid-cols-1.md\:grid-cols-2.gap-4 {
+    gap: 8px !important;
+  }
+  
+  /* 减小基本信息卡片的内边距 */
+  .group.p-3.rounded-lg {
+    padding: 6px !important;
+  }
+  
+  /* 调整工作经历部分的间距 */
+  .space-y-4 {
+    margin-top: 0 !important;
+  }
+  
+  .space-y-4 > * {
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+    padding: 6px !important;
+  }
+  
+  /* 确保项目经历部分在新页面开始 */
+  .print-projects {
+    page-break-before: always;
+  }
+  
+  /* 调整页面顶部间距 */
+  .py-12 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* 减小字体大小 */
+  body {
+    font-size: 0.85rem !important;
+  }
+  
+  /* 减小标签和内容的间距 */
+  label + div {
+    margin-top: 2px !important;
   }
 }
