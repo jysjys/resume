@@ -369,7 +369,7 @@ export default function ResumePage() {
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary">AI 智能财报助手</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Next.js', 'TailwindCSS', 'DaisyUI', 'Supabase'].map((tech, index) => (
+                {['Vue', 'LangChain', 'Editor'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
