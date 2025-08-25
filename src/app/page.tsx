@@ -380,7 +380,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>基于 AI 的实时内容创作与管理平台，支持多用户协作与智能推荐</p>
+                    <p>基于 AI 的财务报表类对话应用机器人</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -392,8 +392,8 @@ export default function ResumePage() {
                     <ul className="list-disc list-inside space-y-2">
                       <li>采用 LangChain.js 构建对话链，优化复杂 AI 任务（如多步骤内容生成）的交互流程</li>
                       <li>基于 ECharts D3.js实现交互式财务图表，支持流式数据增量更新，实时反映财务趋势变化</li>
-                      <li>结合SupabaseAuth实现基于角色的财务报表访问控制，确保敏感财务数据仅对授权用户可见</li>
-                      <li>采用 Server-Sent Events (SSE) 实现实时财务数据流式推送，确保大规模报表（10万+行）无卡顿加载</li>
+                      <li>接入推荐 API，动态渲染个性化提示词卡片</li>
+                      <li>前端基于 dawang Editor + OpenAI API 实现一键生成段落</li>
                     </ul>
                   </div>
                 </div>
@@ -401,10 +401,10 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* 项目4：精友系统 */}
+          {/* 项目4：不良资产监控系统 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">精友系统</h3>
+              <h3 className="card-title text-xl font-bold text-primary">不良资产监控系统</h3>
               <div className="flex flex-wrap gap-2 my-2">
                 {['Vue', 'H5'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
