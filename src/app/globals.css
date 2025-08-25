@@ -23,51 +23,156 @@
 @media print {
   /* 隐藏主题切换器 */
   .dropdown.dropdown-end {
-    display: none;
+    display: none !important;
   }
   
-  /* 防止所有内容块内部分页 */
+  /* 页面设置 */
+  @page {
+    margin: 1cm 0.8cm;
+    size: A4;
+  }
+  
+  /* 基础字体和颜色设置 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  body {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: #333 !important;
+    background: white !important;
+  }
+  
+  /* 容器和布局优化 */
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .py-12 {
+    padding: 0 !important;
+  }
+  
+  /* 防止内容块分页 */
   .card, section, .collapse, .card-body {
     break-inside: avoid;
-    page-break-inside: avoid; /* 兼容旧浏览器 */
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    transition: none !important;
   }
   
-  /* 调整头像大小和布局 */
+  /* 基本信息部分优化 */
+  section:first-of-type {
+    margin-bottom: 16px !important;
+  }
+  
+  /* 头像和基本信息布局 */
   .flex.gap-8.flex-col.md\:flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
   }
   
-  /* 头像容器尺寸调整 */
+  /* 头像尺寸优化 */
+  .print-avatar,
   .w-48.h-48 {
-    width: 100px !important;
-    height: 100px !important;
-    min-width: 100px !important;
-    margin-right: 16px;
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
   }
   
-  /* 打印时头像样式 */
-  .print-avatar {
-    width: 100px !important;
-    height: 100px !important;
-    min-width: 100px !important;
+  .print-avatar img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
   }
   
-  /* 项目部分打印样式 */
+  /* 基本信息网格布局优化 */
+  .flex-1.grid.grid-cols-1.md\:grid-cols-2.gap-4 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    flex: 1 !important;
+  }
+  
+  .group.p-3.rounded-lg {
+    padding: 6px 8px !important;
+    margin: 0 !important;
+    border: 1px solid #e8e8e8 !important;
+    border-radius: 4px !important;
+    background: #fcfcfc !important;
+  }
+  
+  /* 标题样式优化 - 使用更柔和的颜色 */
+  h2 {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-bottom: 8px !important;
+    margin-top: 0 !important;
+    color: #2c3e50 !important;
+    border-bottom: 2px solid #3498db !important;
+    padding-bottom: 4px !important;
+  }
+  
+  h2::before {
+    display: none !important;
+  }
+  
+  h3 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+    margin-top: 0 !important;
+    color: #34495e !important;
+  }
+  
+  /* 章节间距优化 - 使用更柔和的边框 */
+  section {
+    margin-bottom: 16px !important;
+    padding: 12px !important;
+    background: white !important;
+    border: 1px solid #ecf0f1 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  }
+  
+  /* 工作经历和教育经历样式 - 柔和边框 */
+  .space-y-4 > * {
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+    padding: 8px !important;
+    border: 1px solid #f1f2f6 !important;
+    border-radius: 4px !important;
+    background: #fafbfc !important;
+  }
+  
+  .space-y-4 > *:first-child {
+    margin-top: 0 !important;
+  }
+  
+  /* 项目经历部分优化 */
+  .print-projects {
+    page-break-before: auto !important;
+  }
+  
   .print-projects .card {
     break-inside: avoid;
     page-break-inside: avoid;
     margin-bottom: 12px !important;
-  }
-  
-  /* 减小各部分间距，使内容更紧凑 */
-  section {
-    margin-bottom: 10px !important;
+    border: 1px solid #e9ecef !important;
+    background: white !important;
     padding: 12px !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03) !important;
   }
   
-  /* 减小项目卡片间距 */
   .space-y-6 > * {
     margin-top: 12px !important;
     margin-bottom: 0 !important;
@@ -77,92 +182,120 @@
     margin-top: 0 !important;
   }
   
-  /* 优化打印样式，移除不必要的阴影和过渡效果 */
-  .card, section, .collapse, .card-body {
-    box-shadow: none !important;
-    transition: none !important;
+  /* 折叠面板优化 */
+  .collapse {
+    border: none !important;
+    background: transparent !important;
   }
   
-  /* 确保背景色和图片在打印时显示 */
-  * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    color-adjust: exact !important;
+  .collapse-title {
+    padding: 4px 0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    min-height: auto !important;
   }
   
-  /* 调整页面边距 */
-  @page {
-    margin: 0.5cm;
+  .collapse-content {
+    padding: 4px 0 8px 0 !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: #555 !important;
   }
   
-  /* 容器宽度调整 */
-  .container {
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin-top: 0 !important;
-  }
-  
-  /* 减小标题和内容的间距 */
-  h2 {
-    margin-bottom: 6px !important;
-    font-size: 1.25rem !important;
-  }
-  
-  h3 {
-    margin-bottom: 4px !important;
-    font-size: 1rem !important;
-  }
-  
-  /* 调整折叠面板的内边距 */
-  .collapse-title, .collapse-content {
-    padding: 6px 10px !important;
-  }
-  
-  /* 减小技术标签的大小 */
+  /* 技术标签优化 - 更柔和的样式 */
   .badge {
     padding: 2px 6px !important;
-    font-size: 0.7rem !important;
+    font-size: 10px !important;
+    background: #f8f9fa !important;
+    color: #495057 !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 3px !important;
+    margin: 1px !important;
   }
   
-  /* 调整基本信息部分的布局 */
-  .flex-1.grid.grid-cols-1.md\:grid-cols-2.gap-4 {
-    gap: 8px !important;
+  /* 列表样式优化 */
+  ul.list-disc {
+    margin: 4px 0 !important;
+    padding-left: 16px !important;
   }
   
-  /* 减小基本信息卡片的内边距 */
-  .group.p-3.rounded-lg {
-    padding: 6px !important;
+  ul.list-disc li {
+    margin: 2px 0 !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    color: #555 !important;
   }
   
-  /* 调整工作经历部分的间距 */
-  .space-y-4 {
-    margin-top: 0 !important;
+  /* 标签和内容间距 */
+  label {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #6c757d !important;
+    margin-bottom: 2px !important;
   }
   
-  .space-y-4 > * {
-    margin-top: 6px !important;
-    margin-bottom: 0 !important;
-    padding: 6px !important;
-  }
-  
-  /* 确保项目经历部分在新页面开始 */
-  .print-projects {
-    page-break-before: always;
-  }
-  
-  /* 调整页面顶部间距 */
-  .py-12 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  
-  /* 减小字体大小 */
-  body {
-    font-size: 0.85rem !important;
-  }
-  
-  /* 减小标签和内容的间距 */
   label + div {
     margin-top: 2px !important;
+    font-size: 12px !important;
+    color: #333 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* 日期显示优化 */
+  .text-sm.text-base-content\/60 {
+    font-size: 11px !important;
+    color: #6c757d !important;
+    font-weight: normal !important;
+  }
+  
+  /* 卡片标题优化 */
+  .card-title {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #2c3e50 !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* 移除不必要的装饰效果 */
+  .hover\:border-primary\/30,
+  .hover\:bg-primary\/5,
+  .hover\:shadow-md,
+  .hover\:shadow-xl,
+  .group-hover\:text-primary {
+    border-color: inherit !important;
+    background-color: inherit !important;
+    box-shadow: inherit !important;
+    color: inherit !important;
+  }
+  
+  /* 确保重要内容不被截断 */
+  .card-body {
+    padding: 8px !important;
+  }
+  
+  /* 优化弹性布局在打印时的表现 */
+  .flex.flex-col.md\:flex-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  
+  .flex.flex-wrap.gap-2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    margin: 4px 0 !important;
+  }
+  
+  /* 添加分隔线样式 - 更柔和的视觉分隔 */
+  section + section::before {
+    content: '' !important;
+    display: block !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: linear-gradient(to right, transparent, #e9ecef 20%, #e9ecef 80%, transparent) !important;
+    margin-bottom: 16px !important;
   }
 }
