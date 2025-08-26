@@ -235,7 +235,7 @@ export default function ResumePage() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
             <div className="flex-1">
               <h3 className="text-lg font-medium text-base-content">绥化学院</h3>
-              <p className="text-base-content/70">计算机科学与技术</p>
+              <p className="text-base-content/70">统招本科 ｜ 计算机科学与技术</p>
             </div>
             <div className="text-sm text-base-content/60 md:text-right">
               2013 - 2017
@@ -255,7 +255,7 @@ export default function ResumePage() {
                 <p className="text-base-content/70">前端开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
-                2023 - 至今
+                2023/11 - 2025/06
               </div>
             </div>
           </div>
@@ -266,7 +266,7 @@ export default function ResumePage() {
                 <p className="text-base-content/70">前端开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
-                2021 - 2023
+                2021/11 - 2023/09
               </div>
             </div>
           </div>
@@ -277,7 +277,7 @@ export default function ResumePage() {
                 <p className="text-base-content/70">前端开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
-                2018 - 2021
+                2018/03 - 2021/10
               </div>
             </div>
           </div>
@@ -304,7 +304,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>采用微前端架构，实现业务模块解耦与独立部署，基座应用集成统一登录鉴权、菜单管理、全局状态共享及ECharts数据可视化看板</p>
+                    <p>公司是矩阵型项目制结构，带领5人左右的前端团队采用微前端架构，实现业务模块解耦与独立部署，基座应用集成统一登录鉴权、菜单管理、全局状态共享及ECharts数据可视化看板</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -341,7 +341,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>为30+地方政府提供党员管理、组织生活等全流程数字化解决方案</p>
+                    <p>低代码项目，为30+地方政府提供党员管理、组织生活等全流程数字化解决方案</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -351,9 +351,10 @@ export default function ResumePage() {
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>动态表单引擎：通过JSON Schema配置渲染表单，支持50+字段类型，减少前端硬编码70%</li>
-                      <li>权限组件实现RBAC模型，按钮级控制精度</li>
-                      <li>采用React Hooks优化代码复用率，抽离useAuth、useTable等公共Hook</li>
+                      <li>带领约 10 人的前端团队，从 0 到 1 基于 React 构建低代码平台，负责技术选型与架构设计，推动核心功能落地</li>
+                      <li>低代码动态表单引擎：基于 JSON Schema 配置渲染表单，支持 50+ 字段类型，减少前端硬编码约 70%，显著提升研发效率</li>
+                      <li>权限控制体系：权限组件实现RBAC模型，按钮级控制精度</li>
+                      <li>前端架构与复用：采用 React Hooks 抽象 useAuth、useTable 等通用逻辑，提升代码复用率与可维护性</li>
                     </ul>
                     {/* <div className="mt-4 text-success font-medium">
                       成果：项目交付周期缩短25%，获2022年省级数字政务创新案例奖
