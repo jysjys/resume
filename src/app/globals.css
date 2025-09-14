@@ -26,9 +26,9 @@
     display: none !important;
   }
   
-  /* 页面设置 */
+  /* 页面设置 - 适中页边距 */
   @page {
-    margin: 1cm 0.8cm;
+    margin: 0.4cm 0.5cm;
     size: A4;
   }
   
@@ -57,7 +57,7 @@
     padding: 0 !important;
   }
   
-  /* 防止内容块分页 */
+  /* 防止内容块分页 - 前四个模块强制在第一页 */
   .card, section, .collapse, .card-body {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -65,9 +65,23 @@
     transition: none !important;
   }
   
-  /* 基本信息部分优化 */
+  /* 前四个模块分页控制 */
+  section:nth-of-type(1),
+  section:nth-of-type(2), 
+  section:nth-of-type(3),
+  section:nth-of-type(4) {
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+  }
+  
+  section:nth-of-type(5) {
+    page-break-before: always !important;
+  }
+  
+  /* 基本信息部分优化 - 减少间距 */
   section:first-of-type {
-    margin-bottom: 16px !important;
+    margin-bottom: 12px !important;
+    padding: 12px !important;
   }
   
   /* 头像和基本信息布局 */
@@ -75,10 +89,10 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
-    gap: 16px !important;
+    gap: 14px !important;
   }
   
-  /* 头像尺寸优化 */
+  /* 头像尺寸优化 - 适中尺寸 */
   .print-avatar,
   .w-48.h-48 {
     width: 80px !important;
@@ -95,7 +109,7 @@
     border-radius: 8px !important;
   }
   
-  /* 基本信息网格布局优化 */
+  /* 基本信息网格布局优化 - 减少间距 */
   .flex-1.grid.grid-cols-1.md\:grid-cols-2.gap-4 {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -104,18 +118,18 @@
   }
   
   .group.p-3.rounded-lg {
-    padding: 6px 8px !important;
+    padding: 8px 10px !important;
     margin: 0 !important;
     border: 1px solid #e8e8e8 !important;
-    border-radius: 4px !important;
+    border-radius: 6px !important;
     background: #fcfcfc !important;
   }
   
-  /* 标题样式优化 - 使用更柔和的颜色 */
+  /* 标题样式优化 - 减少间距 */
   h2 {
-    font-size: 16px !important;
+    font-size: 17px !important;
     font-weight: bold !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
     margin-top: 0 !important;
     color: #2c3e50 !important;
     border-bottom: 2px solid #3498db !important;
@@ -129,28 +143,46 @@
   h3 {
     font-size: 14px !important;
     font-weight: 600 !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 5px !important;
     margin-top: 0 !important;
     color: #34495e !important;
   }
   
-  /* 章节间距优化 - 使用更柔和的边框 */
+  /* 章节间距优化 - 减少间距 */
   section {
-    margin-bottom: 16px !important;
+    margin-bottom: 14px !important;
     padding: 12px !important;
     background: white !important;
     border: 1px solid #ecf0f1 !important;
-    border-radius: 6px !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06) !important;
   }
   
-  /* 工作经历和教育经历样式 - 柔和边框 */
+  /* 教育经历模块优化 */
+  section:nth-of-type(2) {
+    margin-bottom: 14px !important;
+    padding: 12px !important;
+  }
+  
+  /* 能力简述模块优化 */
+  section:nth-of-type(3) {
+    margin-bottom: 14px !important;
+    padding: 12px !important;
+  }
+  
+  /* 工作经历模块优化 */
+  section:nth-of-type(4) {
+    margin-bottom: 14px !important;
+    padding: 12px !important;
+  }
+  
+  /* 工作经历和教育经历内容样式 - 减少间距 */
   .space-y-4 > * {
     margin-top: 8px !important;
     margin-bottom: 0 !important;
     padding: 8px !important;
     border: 1px solid #f1f2f6 !important;
-    border-radius: 4px !important;
+    border-radius: 6px !important;
     background: #fafbfc !important;
   }
   
@@ -158,63 +190,45 @@
     margin-top: 0 !important;
   }
   
-  /* 项目经历部分优化 */
-  .print-projects {
-    page-break-before: auto !important;
+  /* 能力简述模块特殊优化 - 减少间距 */
+  .grid.grid-cols-1.md\:grid-cols-2.gap-6 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
   }
   
-  .print-projects .card {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    margin-bottom: 12px !important;
-    border: 1px solid #e9ecef !important;
-    background: white !important;
-    padding: 12px !important;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03) !important;
-  }
-  
-  .space-y-6 > * {
-    margin-top: 12px !important;
+  /* 技术能力标签容器优化 */
+  .space-y-3 > * {
+    margin-top: 6px !important;
     margin-bottom: 0 !important;
   }
   
-  .space-y-6 > *:first-child {
+  .space-y-3 > *:first-child {
     margin-top: 0 !important;
   }
   
-  /* 折叠面板优化 */
-  .collapse {
-    border: none !important;
-    background: transparent !important;
+  /* 核心优势列表优化 */
+  .space-y-2 > * {
+    margin-top: 4px !important;
+    margin-bottom: 0 !important;
   }
   
-  .collapse-title {
-    padding: 4px 0 !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    color: #2c3e50 !important;
-    min-height: auto !important;
+  .space-y-2 > *:first-child {
+    margin-top: 0 !important;
   }
   
-  .collapse-content {
-    padding: 4px 0 8px 0 !important;
-    font-size: 12px !important;
-    line-height: 1.4 !important;
-    color: #555 !important;
-  }
-  
-  /* 技术标签优化 - 更柔和的样式 */
+  /* 技术标签优化 - 减少尺寸 */
   .badge {
     padding: 2px 6px !important;
     font-size: 10px !important;
     background: #f8f9fa !important;
     color: #495057 !important;
     border: 1px solid #dee2e6 !important;
-    border-radius: 3px !important;
-    margin: 1px !important;
+    border-radius: 4px !important;
+    margin: 2px !important;
   }
   
-  /* 列表样式优化 */
+  /* 列表样式优化 - 减少间距 */
   ul.list-disc {
     margin: 4px 0 !important;
     padding-left: 16px !important;
@@ -223,13 +237,13 @@
   ul.list-disc li {
     margin: 2px 0 !important;
     font-size: 12px !important;
-    line-height: 1.3 !important;
+    line-height: 1.4 !important;
     color: #555 !important;
   }
   
-  /* 标签和内容间距 */
+  /* 标签和内容间距 - 减少间距 */
   label {
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-weight: 600 !important;
     color: #6c757d !important;
     margin-bottom: 2px !important;
@@ -244,7 +258,7 @@
   
   /* 日期显示优化 */
   .text-sm.text-base-content\/60 {
-    font-size: 11px !important;
+    font-size: 10px !important;
     color: #6c757d !important;
     font-weight: normal !important;
   }
@@ -255,18 +269,6 @@
     font-weight: bold !important;
     color: #2c3e50 !important;
     margin-bottom: 6px !important;
-  }
-  
-  /* 移除不必要的装饰效果 */
-  .hover\:border-primary\/30,
-  .hover\:bg-primary\/5,
-  .hover\:shadow-md,
-  .hover\:shadow-xl,
-  .group-hover\:text-primary {
-    border-color: inherit !important;
-    background-color: inherit !important;
-    box-shadow: inherit !important;
-    color: inherit !important;
   }
   
   /* 确保重要内容不被截断 */
@@ -285,17 +287,24 @@
   .flex.flex-wrap.gap-2 {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 4px !important;
-    margin: 4px 0 !important;
+    gap: 3px !important;
+    margin: 3px 0 !important;
   }
   
-  /* 添加分隔线样式 - 更柔和的视觉分隔 */
+  /* 移除分隔线以节省空间 */
   section + section::before {
-    content: '' !important;
-    display: block !important;
-    width: 100% !important;
-    height: 1px !important;
-    background: linear-gradient(to right, transparent, #e9ecef 20%, #e9ecef 80%, transparent) !important;
-    margin-bottom: 16px !important;
+    display: none !important;
+  }
+  
+  /* 移除不必要的装饰效果 */
+  .hover\:border-primary\/30,
+  .hover\:bg-primary\/5,
+  .hover\:shadow-md,
+  .hover\:shadow-xl,
+  .group-hover\:text-primary {
+    border-color: inherit !important;
+    background-color: inherit !important;
+    box-shadow: inherit !important;
+    color: inherit !important;
   }
 }

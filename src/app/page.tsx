@@ -88,7 +88,7 @@ export default function ResumePage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-5xl">
       {/* 主题切换器 */}
-      <div className="flex justify-end mb-4">
+      {/* <div className="flex justify-end mb-4">
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost m-1 gap-1 normal-case">
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
@@ -175,7 +175,7 @@ export default function ResumePage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* 基本信息部分 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">基本信息</h2>
@@ -244,6 +244,76 @@ export default function ResumePage() {
         </div>
       </section>
 
+      {/* 能力简述部分 */}
+      <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
+        <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">能力简述</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* 技术能力 */}
+          <div className="p-4 rounded-lg bg-base-100 hover:bg-primary/5 transition-all duration-300">
+            <h3 className="text-lg font-medium text-base-content mb-3 flex items-center gap-2">
+              <span className="w-2 h-2 bg-primary rounded-full"></span>
+              技术能力
+            </h3>
+            <div className="space-y-3">
+              <div>
+                <span className="text-sm font-medium text-base-content/70">前端技术：</span>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {['Vue', 'React', 'Next.js', 'Echarts', 'Qiankun'].map((tech, index) => (
+                    <span key={index} className="inline-block px-2 py-0.5 text-xs font-medium bg-primary/10 text-primary border border-primary/20 rounded">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span className="text-sm font-medium text-base-content/70">后端技术：</span>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {['MySQL', 'Node.js', 'JWT/Oauth2', 'Spring Boot', 'MyBatis'].map((tech, index) => (
+                    <span key={index} className="inline-block px-2 py-0.5 text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20 rounded">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span className="text-sm font-medium text-base-content/70">工程化：</span>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {['Git', 'Webpack', 'Docker/K8s', 'Git'].map((tech, index) => (
+                    <span key={index} className="inline-block px-2 py-0.5 text-xs font-medium bg-accent/10 text-accent border border-accent/20 rounded">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 核心优势 */}
+          <div className="p-4 rounded-lg bg-base-100 hover:bg-primary/5 transition-all duration-300">
+            <h3 className="text-lg font-medium text-base-content mb-3 flex items-center gap-2">
+              <span className="w-2 h-2 bg-secondary rounded-full"></span>
+              核心优势
+            </h3>
+            <ul className="space-y-2 text-base-content/80">
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                <span>具备微前端架构设计与实施经验，擅长大型项目架构</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                <span>能够独立完成前后端一体化开发与接口设计</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                <span>低代码平台开发经验，注重开发效率与代码质量</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                <span>主导过微前端改造与系统迁移，推动多业务系统融合</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                <span>具备团队管理经验，善于技术方案设计与推动落地</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* 工作经验部分 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">工作经历</h2>
@@ -304,7 +374,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>公司是矩阵型项目制结构，带领5人左右的前端团队采用微前端架构，实现业务模块解耦与独立部署，基座应用集成统一登录鉴权、菜单管理、全局状态共享及ECharts数据可视化看板</p>
+                    <p>负责前端架构设计与团队管理，带领 5 人团队基于微前端完成业务模块解耦与独立部署。构建统一的基座应用，集成 单点登录、全局状态管理并实现 ECharts 数据可视化看板，为对公客户关系管理提供高可用、可扩展的前端支撑。</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -314,10 +384,11 @@ export default function ResumePage() {
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>基于 Qiankun 搭建主子应用架构，实现独立开发、部署与运行时隔离</li>
-                      <li>集成 MinIO 作为文档存储中台，实现文件分类管理与权限控制（读写/下载）</li>
-                      <li>分析构建产物，通过 SplitChunksPlugin 拆分公共依赖（如Vue/Lodash）</li>
-                      <li>对接 kkFileView 服务，支持Office/PDF/图片等50+格式的在线预览</li>
+                      <li>基于 Qiankun 微前端架构，实现业务子系统独立开发与部署，降低发布风险，显著提升迭代效率</li>
+                      <li>集成 MinIO 文档中台，统一管理文件存储，支持多角色读写与安全下载</li>
+                      <li>优化构建产物，利用 Webpack SplitChunksPlugin 拆分公共依赖（Vue / Lodash 等），减少包体积并提升首屏性能</li>
+                      <li>对接 kkFileView 在线预览服务，支持 Office、PDF、图片等 50+ 格式文件预览，提升用户体验与办公效率</li>
+                      <li>推动 前端规范化与团队协作流程建设，提升研发效率与代码质量，保障复杂系统稳定交付</li>
                     </ul>
                   </div>
                 </div>
@@ -341,7 +412,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>低代码项目，为30+地方政府提供党员管理、组织生活等全流程数字化解决方案</p>
+                    <p>面向 30+ 地方政府，打造 党员管理与组织生活数字化平台。以低代码方式支撑多样化政务场景，实现 快速定制、低成本交付。本人从 0 到 1 主导前端架构设计与技术选型，构建低代码平台核心能力，推动系统在多地政府稳定上线。</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -351,10 +422,11 @@ export default function ResumePage() {
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>带领约 10 人的前端团队，从 0 到 1 基于 React 构建低代码平台，负责技术选型与架构设计，推动核心功能落地</li>
-                      <li>低代码动态表单引擎：基于 JSON Schema 配置渲染表单，支持 50+ 字段类型，减少前端硬编码约 70%，显著提升研发效率</li>
-                      <li>权限控制体系：权限组件实现RBAC模型，按钮级控制精度</li>
-                      <li>前端架构与复用：采用 React Hooks 抽象 useAuth、useTable 等通用逻辑，提升代码复用率与可维护性</li>
+                      <li>基于 React + Umi 搭建低代码平台，从 0 到 1 完成架构设计与核心功能落地</li>
+                      <li>构建低代码引擎，支持多业务场景快速配置与扩展，显著提升交付效率</li>
+                      <li>设计并实现动态表单引擎，基于 JSON Schema 渲染 50+ 字段类型，减少前端硬编码约 70%</li>
+                      <li>使用 React Hook 抽象 useAuth、useTable 等通用逻辑，结合 Ant Design 提升组件复用率与可维护性</li>
+                      <li>实现基于 RBAC 的权限控制体系，覆盖菜单与按钮级权限，满足政务系统高安全性要求</li>
                     </ul>
                     {/* <div className="mt-4 text-success font-medium">
                       成果：项目交付周期缩短25%，获2022年省级数字政务创新案例奖
@@ -370,7 +442,7 @@ export default function ResumePage() {
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary">AI 智能财报助手</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Vue', 'LangChain', 'Editor'].map((tech, index) => (
+                {['Nextjs', 'React', 'Echarts', 'SSR'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
@@ -381,7 +453,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>基于 AI 的财务报表类对话应用机器人</p>
+                    <p>AI 财务报表类对话应用机器人</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -391,10 +463,12 @@ export default function ResumePage() {
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>采用 LangChain.js 构建对话链，优化复杂 AI 任务（如多步骤内容生成）的交互流程</li>
-                      <li>基于 ECharts D3.js实现交互式财务图表，支持流式数据增量更新，实时反映财务趋势变化</li>
-                      <li>接入推荐 API，动态渲染个性化提示词卡片</li>
-                      <li>前端基于 dawang Editor + OpenAI API 实现一键生成段落</li>
+                      <li>基于 Next.js + React 进行整体架构搭建，结合 SSR / SSG 提升首屏性能与 SEO 友好度</li>
+                      <li>集成 Ant Design Pro 作为 UI 组件体系，配合 Tailwind CSS 定制化财务数据可视化界面</li>
+                      <li>基于 React Query / SWR 实现对话消息的请求缓存与数据状态管理，保证响应实时性与可扩展性</li>
+                      <li>借助 WebSocket / SSE 构建流式响应机制，实现类似 ChatGPT 的逐字输出效果，提升交互体验</li>
+                      <li>使用 Monaco Editor / Markdown 渲染组件，支持多格式输出（文本、表格、图表），增强财报解析能力</li>
+                      <li>集成 Chart.js / ECharts 进行财务数据可视化，支持图表与自然语言问答的联动展示</li>
                     </ul>
                   </div>
                 </div>
@@ -418,7 +492,7 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>基于Vue的高性能数据管理平台，支持海量数据展示与精细化权限控制</p>
+                    <p>基于 Vue 构建的高性能数据管理平台，支持海量资产数据的可视化展示，为总行提供风险监控与业务决策支持。</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
@@ -429,9 +503,10 @@ export default function ResumePage() {
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
                       <li>封装统一埋点SDK，自动采集页面PV、按钮点击、接口异常等数据，使用requestIdleCallback异步上报埋点数据，避免影响主线程性能</li>
-                      <li>基于xlsx库实现前端Excel解析，支持数据校验与错误提示</li>
+                      <li>封装 通用请求拦截器，统一处理鉴权、异常提示与重试逻辑，提升接口调用的健壮性与可维护性</li>
                       <li>基于 Promise 封装 的通用弹窗组件，支持 链式调用，简化交互逻辑</li>
                       <li>采用 Pinia 替代 Vuex，实现模块化状态管理，配合 Composition API 提升代码可维护性</li>
+                      <li>在关键交互中引入 防抖/节流机制 和 批量 DOM 更新，降低渲染开销，显著改善用户体验</li>
                     </ul>
                   </div>
                 </div>
