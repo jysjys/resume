@@ -68,10 +68,10 @@ export default function ResumePage() {
   })
 
   // 主题切换函数
-  const handleThemeChange = (newTheme: string) => {
-    setTheme(newTheme)
-    document.documentElement.setAttribute('data-theme', newTheme)
-  }
+  // const handleThemeChange = (newTheme: string) => {
+  //   setTheme(newTheme)
+  //   document.documentElement.setAttribute('data-theme', newTheme)
+  // }
 
   // 初始化主题
   useEffect(() => {
