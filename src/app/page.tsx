@@ -467,7 +467,6 @@ export default function ResumePage() {
                       <li>集成 Ant Design Pro 作为 UI 组件体系，配合 Tailwind CSS 定制化财务数据可视化界面</li>
                       <li>基于 React Query / SWR 实现对话消息的请求缓存与数据状态管理，保证响应实时性与可扩展性</li>
                       <li>借助 WebSocket / SSE 构建流式响应机制，实现类似 ChatGPT 的逐字输出效果，提升交互体验</li>
-                      <li>使用 Monaco Editor / Markdown 渲染组件，支持多格式输出（文本、表格、图表），增强财报解析能力</li>
                       <li>集成 Chart.js / ECharts 进行财务数据可视化，支持图表与自然语言问答的联动展示</li>
                     </ul>
                   </div>
@@ -502,7 +501,7 @@ export default function ResumePage() {
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>封装统一埋点SDK，自动采集页面PV、按钮点击、接口异常等数据，使用requestIdleCallback异步上报埋点数据，避免影响主线程性能</li>
+                      <li>封装统一埋点SDK，自动采集页面PV、按钮点击、接口异常等数据，requestIdleCallback异步上报埋点数据，避免影响主线程性能</li>
                       <li>封装 通用请求拦截器，统一处理鉴权、异常提示与重试逻辑，提升接口调用的健壮性与可维护性</li>
                       <li>基于 Promise 封装 的通用弹窗组件，支持 链式调用，简化交互逻辑</li>
                       <li>采用 Pinia 替代 Vuex，实现模块化状态管理，配合 Composition API 提升代码可维护性</li>
