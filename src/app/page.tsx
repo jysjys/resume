@@ -322,7 +322,7 @@ export default function ResumePage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
               <div className="flex-1">
                 <h3 className="text-lg font-medium text-base-content">北银金科</h3>
-                <p className="text-base-content/70">前端开发工程师</p>
+                <p className="text-base-content/70">全栈开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
                 2023/11 - 2025/06
@@ -333,7 +333,7 @@ export default function ResumePage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
               <div className="flex-1">
                 <h3 className="text-lg font-medium text-base-content">恒生电子</h3>
-                <p className="text-base-content/70">前端开发工程师</p>
+                <p className="text-base-content/70">全栈开发工程师</p>
               </div>
               <div className="text-sm text-base-content/60 md:text-right">
                 2021/11 - 2023/09
@@ -388,6 +388,8 @@ export default function ResumePage() {
                       <li>集成 MinIO 文档中台，统一管理文件存储，支持多角色读写与安全下载</li>
                       <li>优化构建产物，利用 Webpack SplitChunksPlugin 拆分公共依赖（Vue / Lodash 等），减少包体积并提升首屏性能</li>
                       <li>对接 kkFileView 在线预览服务，支持 Office、PDF、图片等 50+ 格式文件预览，提升用户体验与办公效率</li>
+                      <li>熟练使用 Spring Boot 框架进行业务开发，并集成 Redis 实现分布式缓存，有效减少数据库访问，提升接口响应速度</li>
+                      <li>基于 RabbitMQ 实现异步任务处理（如邮件发送、日志记录），解耦核心业务流程，提升系统吞吐量与用户体验</li>
                       <li>推动 前端规范化与团队协作流程建设，提升研发效率与代码质量，保障复杂系统稳定交付</li>
                     </ul>
                   </div>
@@ -480,7 +482,7 @@ export default function ResumePage() {
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary">不良资产监控系统</h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Vue', 'H5'].map((tech, index) => (
+                {['Vue', 'H5', 'Pinia', 'Node'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
@@ -506,6 +508,7 @@ export default function ResumePage() {
                       <li>基于 Promise 封装 的通用弹窗组件，支持 链式调用，简化交互逻辑</li>
                       <li>采用 Pinia 替代 Vuex，实现模块化状态管理，配合 Composition API 提升代码可维护性</li>
                       <li>在关键交互中引入 防抖/节流机制 和 批量 DOM 更新，降低渲染开销，显著改善用户体验</li>
+                      <li>使用 Node.js 构建中间层服务，聚合下游多个微服务接口，为前端提供量身定制的 API，解决浏览器请求并发限制，提升页面加载性能</li>
                     </ul>
                   </div>
                 </div>
