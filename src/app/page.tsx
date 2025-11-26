@@ -75,7 +75,7 @@ export default function ResumePage() {
 
   // 初始化主题
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'cupcake'
+    const savedTheme = localStorage.getItem('theme') || 'light'
     setTheme(savedTheme)
     document.documentElement.setAttribute('data-theme', savedTheme)
   }, [])
