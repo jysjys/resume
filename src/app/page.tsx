@@ -358,48 +358,10 @@ export default function ResumePage() {
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300 print-projects">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">项目经历</h2>
         <div className="space-y-6">
-          {/* 项目0：速赢监控系统 */}
+          {/* 项目2：CRM系统 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">速赢客户信息风险监控平台</h3>
-              <div className="flex flex-wrap gap-2 my-2">
-                {['React', 'Node', 'ECharts', 'WebSocket', 'Express', 'Redis'].map((tech, index) => (
-                  <span key={index} className="badge badge-primary badge-outline">{tech}</span>
-                ))}
-              </div>
-              <div className="space-y-4">
-                <div className="collapse collapse-open collapse-plus bg-base-200">
-                  <input type="checkbox" className="peer" />
-                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
-                    项目描述
-                  </div>
-                  <div className="collapse-content text-base-content/80">
-                    <p>主导开发面向总行的资产风险监控系统，构建以React为核心、Node.js为BFF层的高性能数据可视化平台。实现对海量资产数据的实时监控、风险预警与多维图表分析，为高层决策提供直观的数据支撑。</p>
-                  </div>
-                </div>
-                <div className="collapse collapse-open collapse-plus bg-base-200">
-                  <input type="checkbox" className="peer" />
-                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
-                    项目亮点
-                  </div>
-                  <div className="collapse-content text-base-content/80">
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>采用 React + TypeScript 构建可复用可视化组件库，封装基于 ECharts 的资产看板、趋势图、地理散点图等10+复杂图表，支持钻取与联动分析，并统一视觉规范与交互体验。</li>
-                      <li>基于 Node.js + Express 搭建BFF中间层，聚合下游超20个微服务接口，设计统一数据适配器，将接口平均响应时间优化至200ms以内，有力保障前端流畅体验</li>
-                      <li>使用 WebSocket 实现风险警报与资产变动的实时推送，确保监控数据的秒级更新，提升系统响应实时性</li>
-                      <li>引入 Redis 缓存热点资产数据与图表配置，降低BFF层对下游服务的重复查询，缓存命中率达85%以上</li>
-                      <li>运用 React Hooks 与 Context API 管理复杂的全局可视化状态，保证多图表、3D场景与控件的状态同步</li>
-                      <li>主导前端工程化建设，配置 Webpack 分包与代码分割，将可视化库拆为独立Chunk，有效利用浏览器缓存，提升重复访问性能</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* 项目1：CRM系统 */}
-          <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">对公客户关系CRM系统</h3>
+              <h3 className="card-title text-xl font-bold text-primary flex items-center justify-between"><span>对公客户关系CRM系统</span><span className="text-sm text-base-content/60">2023.11~2025.6</span></h3>
               <div className="flex flex-wrap gap-2 my-2">
                 {['Qiankun', 'SpringBoot', 'ECharts', 'Nginx'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
@@ -436,12 +398,13 @@ export default function ResumePage() {
             </div>
           </div>
 
-          {/* 项目2：党建平台 */}
+
+          {/* 项目1：速赢监控系统 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">SaaS党建平台</h3>
+              <h3 className="card-title text-xl font-bold text-primary flex items-center justify-between"><span>速赢客户信息风险监控平台</span><span className="text-sm text-base-content/60">2023.11~2025.6</span></h3>
               <div className="flex flex-wrap gap-2 my-2">
-                {['Umi', 'Ant Design', 'React Hooks', 'JSON Schema'].map((tech, index) => (
+                {['React', 'Node', 'ECharts', 'WebSocket', 'Express', 'Redis'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
                 ))}
               </div>
@@ -452,35 +415,34 @@ export default function ResumePage() {
                     项目描述
                   </div>
                   <div className="collapse-content text-base-content/80">
-                    <p>面向 30+ 地方政府，打造 党员管理与组织生活数字化平台。以低代码方式支撑多样化政务场景，实现 快速定制、低成本交付。本人从 0 到 1 主导前端架构设计与技术选型，构建低代码平台核心能力，推动系统在多地政府稳定上线。</p>
+                    <p>主导开发面向总行的资产风险监控系统，构建以React为核心、Node.js为BFF层的高性能数据可视化平台。实现对海量资产数据的实时监控、风险预警与多维图表分析，为高层决策提供直观的数据支撑。</p>
                   </div>
                 </div>
                 <div className="collapse collapse-open collapse-plus bg-base-200">
                   <input type="checkbox" className="peer" />
                   <div className="collapse-title text-base font-medium peer-checked:text-primary">
-                    技术亮点
+                    项目亮点
                   </div>
                   <div className="collapse-content text-base-content/80">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>基于 React + Umi 搭建低代码平台，从 0 到 1 完成架构设计与核心功能落地</li>
-                      <li>构建低代码引擎，支持多业务场景快速配置与扩展，显著提升交付效率</li>
-                      <li>设计并实现动态表单引擎，基于 JSON Schema 渲染 50+ 字段类型，减少前端硬编码约 70%</li>
-                      <li>使用 React Hook 抽象 useAuth、useTable 等通用逻辑，结合 Ant Design 提升组件复用率与可维护性</li>
-                      <li>实现基于 RBAC 的权限控制体系，覆盖菜单与按钮级权限，满足政务系统高安全性要求</li>
+                      <li>采用 React + TypeScript 构建可复用可视化组件库，封装基于 ECharts 的资产看板、趋势图、地理散点图等10+复杂图表，支持钻取与联动分析，并统一视觉规范与交互体验。</li>
+                      <li>基于 Node.js + Express 搭建BFF中间层，聚合下游超20个微服务接口，设计统一数据适配器，将接口平均响应时间优化至200ms以内，有力保障前端流畅体验</li>
+                      <li>使用 WebSocket 实现风险警报与资产变动的实时推送，确保监控数据的秒级更新，提升系统响应实时性</li>
+                      <li>引入 Redis 缓存热点资产数据与图表配置，降低BFF层对下游服务的重复查询，缓存命中率达85%以上</li>
+                      <li>运用 React Hooks 与 Context API 管理复杂的全局可视化状态，保证多图表、3D场景与控件的状态同步</li>
+                      <li>主导前端工程化建设，配置 Webpack 分包与代码分割，将可视化库拆为独立Chunk，有效利用浏览器缓存，提升重复访问性能</li>
                     </ul>
-                    {/* <div className="mt-4 text-success font-medium">
-                      成果：项目交付周期缩短25%，获2022年省级数字政务创新案例奖
-                    </div> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+
           {/* 项目3：AI 智能财报助手 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">AI 智能财报助手</h3>
+              <h3 className="card-title text-xl font-bold text-primary flex items-center justify-between"><span>AI 智能财报助手</span><span className="text-sm text-base-content/60">2023.11~2025.6</span></h3>
               <div className="flex flex-wrap gap-2 my-2">
                 {['Nextjs', 'React', 'Echarts', 'SSR'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
@@ -515,10 +477,11 @@ export default function ResumePage() {
             </div>
           </div>
 
+
           {/* 项目4：不良资产监控系统 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
-              <h3 className="card-title text-xl font-bold text-primary">不良资产监控系统</h3>
+              <h3 className="card-title text-xl font-bold text-primary flex items-center justify-between"><span>不良资产监控系统</span><span className="text-sm text-base-content/60">2021.11~2023.9</span></h3>
               <div className="flex flex-wrap gap-2 my-2">
                 {['Vue', 'H5', 'Pinia', 'Node'].map((tech, index) => (
                   <span key={index} className="badge badge-primary badge-outline">{tech}</span>
@@ -548,6 +511,48 @@ export default function ResumePage() {
                       <li>在关键交互中引入 防抖/节流机制 和 批量 DOM 更新，降低渲染开销，显著改善用户体验</li>
                       <li>使用 Node.js 构建中间层服务，聚合下游多个微服务接口，为前端提供量身定制的 API，解决浏览器请求并发限制，提升页面加载性能</li>
                     </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          {/* 项目5：党建平台 */}
+          <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="card-body">
+              <h3 className="card-title text-xl font-bold text-primary flex items-center justify-between"><span>SaaS党建平台</span><span className="text-sm text-base-content/60">2021.11~2023.9</span></h3>
+              <div className="flex flex-wrap gap-2 my-2">
+                {['Umi', 'Ant Design', 'React Hooks', 'JSON Schema'].map((tech, index) => (
+                  <span key={index} className="badge badge-primary badge-outline">{tech}</span>
+                ))}
+              </div>
+              <div className="space-y-4">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    项目描述
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <p>面向 30+ 地方政府，打造 党员管理与组织生活数字化平台。以低代码方式支撑多样化政务场景，实现 快速定制、低成本交付。本人从 0 到 1 主导前端架构设计与技术选型，构建低代码平台核心能力，推动系统在多地政府稳定上线。</p>
+                  </div>
+                </div>
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    技术亮点
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>基于 React + Umi 搭建低代码平台，从 0 到 1 完成架构设计与核心功能落地</li>
+                      <li>构建低代码引擎，支持多业务场景快速配置与扩展，显著提升交付效率</li>
+                      <li>设计并实现动态表单引擎，基于 JSON Schema 渲染 50+ 字段类型，减少前端硬编码约 70%</li>
+                      <li>使用 React Hook 抽象 useAuth、useTable 等通用逻辑，结合 Ant Design 提升组件复用率与可维护性</li>
+                      <li>实现基于 RBAC 的权限控制体系，覆盖菜单与按钮级权限，满足政务系统高安全性要求</li>
+                    </ul>
+                    {/* <div className="mt-4 text-success font-medium">
+                      成果：项目交付周期缩短25%，获2022年省级数字政务创新案例奖
+                    </div> */}
                   </div>
                 </div>
               </div>
