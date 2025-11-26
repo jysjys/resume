@@ -176,7 +176,7 @@ export default function ResumePage() {
           </div>
         </div>
       </div> */}
-      {/* 基本信息部分 */}
+      {/* 基本信息 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">基本信息</h2>
         <div className="flex gap-8 flex-col md:flex-row">
@@ -228,7 +228,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* 教育经历部分 */}
+      {/* 教育经历 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">教育经历</h2>
         <div className="p-4 rounded-lg bg-base-100 hover:bg-primary/5 transition-all duration-300">
@@ -244,7 +244,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* 能力简述部分 */}
+      {/* 能力简述 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">能力简述</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -314,7 +314,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* 工作经验部分 */}
+      {/* 工作经验 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">工作经历</h2>
         <div className="space-y-4">
@@ -354,10 +354,48 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* 项目经历部分 - 添加 print-projects 类 */}
+      {/* 项目经历 */}
       <section className="mb-8 bg-base-200 p-8 rounded-xl shadow-lg border border-base-300 hover:border-primary/30 transition-all duration-300 print-projects">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 before:content-[''] before:w-2 before:h-6 before:bg-primary before:rounded-full">项目经历</h2>
         <div className="space-y-6">
+          {/* 项目0：速赢监控系统 */}
+          <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="card-body">
+              <h3 className="card-title text-xl font-bold text-primary">速赢客户信息风险监控平台</h3>
+              <div className="flex flex-wrap gap-2 my-2">
+                {['React', 'Node', 'ECharts', 'WebSocket', 'Express', 'Redis'].map((tech, index) => (
+                  <span key={index} className="badge badge-primary badge-outline">{tech}</span>
+                ))}
+              </div>
+              <div className="space-y-4">
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    项目描述
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <p>主导开发面向总行的资产风险监控系统，构建以React为核心、Node.js为BFF层的高性能数据可视化平台。实现对海量资产数据的实时监控、风险预警与多维图表分析，为高层决策提供直观的数据支撑。</p>
+                  </div>
+                </div>
+                <div className="collapse collapse-open collapse-plus bg-base-200">
+                  <input type="checkbox" className="peer" />
+                  <div className="collapse-title text-base font-medium peer-checked:text-primary">
+                    项目亮点
+                  </div>
+                  <div className="collapse-content text-base-content/80">
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>采用 React + TypeScript 构建可复用可视化组件库，封装基于 ECharts 的资产看板、趋势图、地理散点图等10+复杂图表，支持钻取与联动分析，并统一视觉规范与交互体验。</li>
+                      <li>基于 Node.js + Express 搭建BFF中间层，聚合下游超20个微服务接口，设计统一数据适配器，将接口平均响应时间优化至200ms以内，有力保障前端流畅体验</li>
+                      <li>使用 WebSocket 实现风险警报与资产变动的实时推送，确保监控数据的秒级更新，提升系统响应实时性</li>
+                      <li>引入 Redis 缓存热点资产数据与图表配置，降低BFF层对下游服务的重复查询，缓存命中率达85%以上</li>
+                      <li>运用 React Hooks 与 Context API 管理复杂的全局可视化状态，保证多图表、3D场景与控件的状态同步</li>
+                      <li>主导前端工程化建设，配置 Webpack 分包与代码分割，将可视化库拆为独立Chunk，有效利用浏览器缓存，提升重复访问性能</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           {/* 项目1：CRM系统 */}
           <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
