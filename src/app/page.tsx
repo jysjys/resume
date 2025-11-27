@@ -400,7 +400,7 @@ export default function ResumePage() {
 
 
           {/* 项目1：速赢监控系统 */}
-          <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
+          {/* <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="card-body">
               <h3 className="card-title text-xl font-bold text-primary flex items-center justify-between"><span>速赢客户信息风险监控平台</span><span className="text-sm text-base-content/60">2023.11~2025.6</span></h3>
               <div className="flex flex-wrap gap-2 my-2">
@@ -436,7 +436,7 @@ export default function ResumePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
 
           {/* 项目3：AI 智能财报助手 */}
