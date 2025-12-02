@@ -77,6 +77,15 @@
   section:nth-of-type(5) {
     page-break-before: always !important;
   }
+
+  section:nth-of-type(5) {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 0 12px !important;
+    background: white !important;
+    border-left: 3px solid #3498db !important;
+  }
   
   /* 基本信息部分优化 - 减少间距 */
   section:first-of-type {
